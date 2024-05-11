@@ -4,7 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { Tooltip } from 'react-tooltip'; 
 import { FaUserLarge } from "react-icons/fa6";
 const Navbar = () => {
-    const { user } = useContext(AuthContext)
+    const { user,LogOut } = useContext(AuthContext)
     const[theme,setTheme] = useState('light')  
      
     useEffect(()=>{
@@ -29,20 +29,21 @@ const Navbar = () => {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5  text-white w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </div>
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52">
-            <a className="text-xl text-black " >  <NavLink   to="/">  Home </NavLink></a>
+            <a className="text-xl  text-white " >  <NavLink   to="/">  Home </NavLink></a>
              
                       
             </ul>
           </div>
-             <a className="  lg:text-3xl font-extrabold flex uppercase text-orange-200   "> Adventures Abound</a>
+             <a className="  lg:text-3xl font-extrabold  uppercase text-indigo-300  "> Volunteer<span className="text-pink-400" >Wave</span> </a>
+             
         </div>
         <div className="navbar-center  hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-           <a className="text-xl text-white " >  <NavLink   to="/">  Home </NavLink></a>
+           <a className="text-2xl text-white font-semibold " >  <NavLink   to="/">  Home </NavLink></a>
            
           </ul>
         </div>
-        <div className="navbar-end space-x-2 "> 
+        <div className="navbar-end lg:space-x-2 "> 
         <label className="swap swap-rotate">
   
   {/* this hidden checkbox controls the state */}
@@ -73,10 +74,10 @@ const Navbar = () => {
                 }
                  
                     
-                     {user ? <Link  className="  p-1  rounded-xl bg-sky-950 text-white  text-lg  "  >Log Out</Link> 
+                     {user ? <Link onClick={LogOut} className="  p-1  rounded-xl bg-sky-950 text-white  text-xl   "  >Log Out</Link> 
                         :  <div >
-                      <a className="text-xl text-white mx-3  " >    <NavLink  to="/login"> Login    </NavLink></a>   
-                      <a className="text-xl text-white   " >    <NavLink  to="/register"> Register   </NavLink></a>
+                      <a className="text-2xl text-white lg:mx-3  " >    <NavLink  to="/login"> Login    </NavLink></a>   
+                      <a className="text-2xl text-white   " >    <NavLink  to="/signup"> Register   </NavLink></a>
                       </div> }
                        </div>
                       </div>
