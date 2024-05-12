@@ -55,7 +55,7 @@ const Slider = () => {
                 </div>
             </div>
             <div id="slide4" className="carousel-item relative w-full">
-                <img src={"https://i.ibb.co/88XWj24/1000-F-108593517-Q2klc5-W2eb-JL03gb-EW4-P5-B3a-PH9-K0-HHH-1.jpg"} className="w-full rounded-xl" />
+                <img src={"https://i.ibb.co/hCv0p9L/1000-F-32069160-96-Jp-OLq-NYK15-MBN3-UPl-XBp-Zjuj3-Hy-Gqx-1.jpg"} className="w-full rounded-xl" />
                 <div className="absolute rounded-xl flex items-center  h-full left-0 top-0   bg-gradient-to-r from-neutral-950 ... ">
                     <div className=' space-y-7  pl-10'>
                         <h2 className='lg:text-5xl text-cyan-600  font-bold'>Join Hands, Change Lives: Volunteer Today!</h2>

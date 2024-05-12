@@ -11,7 +11,8 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -45,11 +46,11 @@ const HandleLogin = (e)=>{
                 return;
             }
           else if ( !/[A-Z]/.test(password) ){
-            setError('Your Password Should have at least One upperCase character ');
+            toast.error("Password should be an Uppercase Letter!")
            return;
           }
           else if(  !/[a-z]/.test(password ) ){
-            setError('Your Password Should have at least One LowerCase character ');
+            toast.error("Password should be an Lowercase Letter!!")
             return 
           }
    
@@ -83,7 +84,7 @@ const HandleLogin = (e)=>{
         <div className="mt-10" >
        {/* <Helmet>  <title> Register Page  </title>      </Helmet> */}
          
-           <div className="mx-auto w-1/2 mt-8 ">
+           <div className="mx-auto lg:w-1/2 mt-8 ">
        <h1 className="text-3xl font-bold text-center"  >  Create An Account</h1> 
             <form onSubmit={HandleLogin} className="card-body">
             <div className="form-control">
@@ -132,6 +133,8 @@ const HandleLogin = (e)=>{
   </form>
       <h1 className="text-center text-xl  "  >Already have an Account ? < Link to='/login' className="text-lime-600" >Login</Link></h1>
            </div>
+   
+           <ToastContainer />
     </div>
     );
 };
