@@ -13,11 +13,13 @@ const Slider = () => {
                        
                     </div>
                 </div>
-                <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
-                    <a href="#slide4" className="btn btn-sm  mr-5">❮</a>
-                    <a href="#slide2" className="btn btn-sm  ">❯</a>
+                <div className="absolute flex justify-evenly transform -translate-y-1/2 left-5 right-5 bottom-10">
+                    <a href="#slide2" className="btn bg-white btn-sm">❯</a>
+                    <a href="#slide4" className="btn bg-white btn-sm  ">❮</a> 
                 </div>
-
+                 {/* <div className="absolute flex justify-start transform -translate-y-1/2 left-5 right-5 bottom-0" >
+                
+                 </div> */}
 
             </div>
 
@@ -33,9 +35,9 @@ const Slider = () => {
                         
                     </div>
                 </div>
-                <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
-                    <a href="#slide1" className="btn btn-sm mr-5">❮</a>
-                    <a href="#slide3" className="btn btn-sm">❯</a>
+                <div className="absolute flex justify-evenly transform -translate-y-1/2 left-5 right-5 bottom-10">
+                    <a href="#slide1" className="btn bg-white btn-sm mr-5">❮</a>
+                    <a href="#slide3" className="btn bg-white btn-sm">❯</a>
                 </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full">
@@ -49,9 +51,9 @@ const Slider = () => {
                        
                     </div>
                 </div>
-                <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
-                    <a href="#slide2" className="btn btn-sm mr-5">❮</a>
-                    <a href="#slide4" className="btn btn-sm">❯</a>
+                <div className="absolute flex justify-evenly transform -translate-y-1/2 left-5 right-5 bottom-10">
+                    <a href="#slide2" className="btn bg-white btn-sm mr-5">❮</a>
+                    <a href="#slide4" className="btn bg-white btn-sm">❯</a>
                 </div>
             </div>
             <div id="slide4" className="carousel-item relative w-full">
@@ -65,9 +67,9 @@ const Slider = () => {
                        
                     </div>
                 </div>
-                <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
-                    <a href="#slide3" className="btn btn-sm mr-5">❮</a>
-                    <a href="#slide1" className="btn btn-sm">❯</a>
+                <div className="absolute flex justify-evenly transform -translate-y-1/2 left-5 right-5 bottom-10">
+                    <a href="#slide3" className="btn bg-white btn-sm mr-5">❮</a>
+                    <a href="#slide1" className="btn bg-white btn-sm">❯</a>
                 </div>
             </div>
         </div>
