@@ -2,12 +2,11 @@ import { useContext, useState } from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { useNavigate } from 'react-router-dom'
-import { ToastContainer, toast } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
-
-// import axios from 'axios'
-
 import { AuthContext } from '../../Provider/AuthProvider'
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddVoluteerPage = () => {
 
@@ -32,23 +31,29 @@ const AddVoluteerPage = () => {
         post_title, deadline,category,volunteers, description,user_email ,user_name,Thumbnail,Location
       }
     console.log(Data)
-      // ////////// data post in database data post in database
-    //   try {
-    //     const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/job`, jobData )
-    //     console.log(data)
-    //     toast.success('Job Data Updated Successfully!')
-    //     navigate('/my-posted-jobs')
-    //   }
+      ////////// data post in database data post in database
+      try {
+        const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/AddPost`, Data )
+        console.log(data)
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Add Post Successfully",
+            showConfirmButton: false,
+            timer: 3000
+          });
+        navigate('/')
+      }
       
-    //   catch (err) {
-    //     console.log(err)
-    //   }
+      catch (err) {
+        console.log(err)
+      }
     }
 
     return (
 
        <div className="  "  style={{backgroundImage:'url(https://i.ibb.co/dtpMPYf/global-volunteer-solidarity-hands-up-banner-with-earth-map-vector-1017-48268-1.jpg)'}}    >
-
+                     
         <div className='flex hero-overlay bg-opacity-1 justify-center items-center my-12'    >
         <section className=' border-2 border-amber-300 my-4 p-2 md:p-6 mx-auto  bg-slate-300 rounded-md shadow-md '>
           <div className=' mb-4 border-b-4 border-cyan-400   p-2  ' >
@@ -178,7 +183,7 @@ const AddVoluteerPage = () => {
               </button>
             </div>
           </form>
-          <ToastContainer></ToastContainer>
+         
         </section>
       </div> 
        </div>

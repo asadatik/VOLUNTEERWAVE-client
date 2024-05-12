@@ -14,6 +14,8 @@ import Register from './Pages/Home/Register/Register';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import NeedVolunteer from './Pages/NeedVolunteerPage/NeedVolunteer';
 import AddVoluteerPage from './Pages/AddVlunteerPage/AddVoluteerPage';
+import PrivetRoute from './Pages/Privet/PrivetRoute';
+import VolunteerDtls from './Pages/NeedVolunteerPage/VolunteerDtls';
 
 
 const router = createBrowserRouter([
@@ -29,12 +31,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/need",
-    element:<NeedVolunteer></NeedVolunteer>
+        element:<NeedVolunteer></NeedVolunteer>,
+        loader: () =>
+          fetch(`${import.meta.env.VITE_API_URL}/AddPost`)
+          
       },
 
       {
-        path: "/addpost",
-    element:<AddVoluteerPage></AddVoluteerPage>
+         path: "/addpost",
+           element:<PrivetRoute><AddVoluteerPage></AddVoluteerPage></PrivetRoute>
+      },
+      {
+        path: '/post/:id',
+        element:<PrivetRoute>   <VolunteerDtls></VolunteerDtls></PrivetRoute> ,
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_API_URL}/post/${params.id}`),
       },
 
 

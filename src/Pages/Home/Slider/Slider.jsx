@@ -4,7 +4,7 @@ const Slider = () => {
         <div className="carousel h-[700px] w-full ">
             <div id="slide1" className="carousel-item relative w-full">
             <img src={"https://i.ibb.co/23kQBwD/closeup-diverse-people-joining-their-hands.jpg"} className="w-full rounded-xl" />
-                <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-neutral-950 ...  ]">
+                <div className="absolute rounded-xl flex items-center h-full left-0 top-0    bg-gradient-to-r from-neutral-550 ...   ">
                     <div className='text-white lg:space-y-7 pl-10 '>
                         <h2 className='lg:text-5xl text-amber-300 font-bold'>Join Hands, Change Lives: Volunteer Today !</h2>
                         <p className="text-xl" >Make a difference, one act of kindness at a time. Join us in our mission to create positive change in our community. <br /> Volunteer today and be the change you wish to see in the world.
@@ -14,8 +14,9 @@ const Slider = () => {
                     </div>
                 </div>
                 <div className="absolute flex justify-evenly transform -translate-y-1/2 left-5 right-5 bottom-10">
-                    <a href="#slide2" className="btn bg-white btn-sm">❯</a>
-                    <a href="#slide4" className="btn bg-white btn-sm  ">❮</a> 
+                <a href="#slide4" className="btn text-xl bg-white   ">❮</a> 
+                    <a href="#slide2" className="btn text-xl bg-white ">❯</a>
+                    
                 </div>
                  {/* <div className="absolute flex justify-start transform -translate-y-1/2 left-5 right-5 bottom-0" >
                 
@@ -36,8 +37,8 @@ const Slider = () => {
                     </div>
                 </div>
                 <div className="absolute flex justify-evenly transform -translate-y-1/2 left-5 right-5 bottom-10">
-                    <a href="#slide1" className="btn bg-white btn-sm mr-5">❮</a>
-                    <a href="#slide3" className="btn bg-white btn-sm">❯</a>
+                    <a href="#slide1" className="btn text-xl bg-white ">❮</a>
+                    <a href="#slide3" className="btn text-xl bg-white ">❯</a>
                 </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full">
@@ -52,8 +53,8 @@ const Slider = () => {
                     </div>
                 </div>
                 <div className="absolute flex justify-evenly transform -translate-y-1/2 left-5 right-5 bottom-10">
-                    <a href="#slide2" className="btn bg-white btn-sm mr-5">❮</a>
-                    <a href="#slide4" className="btn bg-white btn-sm">❯</a>
+                    <a href="#slide2" className="btn text-xl bg-white ">❮</a>
+                    <a href="#slide4" className="btn text-xl bg-white ">❯</a>
                 </div>
             </div>
             <div id="slide4" className="carousel-item relative w-full">
@@ -68,8 +69,8 @@ const Slider = () => {
                     </div>
                 </div>
                 <div className="absolute flex justify-evenly transform -translate-y-1/2 left-5 right-5 bottom-10">
-                    <a href="#slide3" className="btn bg-white btn-sm mr-5">❮</a>
-                    <a href="#slide1" className="btn bg-white btn-sm">❯</a>
+                    <a href="#slide3" className="btn text-xl bg-white ">❮</a>
+                    <a href="#slide1"className="btn text-xl bg-white ">❯</a>
                 </div>
             </div>
         </div>
