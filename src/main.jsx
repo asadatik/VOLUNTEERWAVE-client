@@ -17,6 +17,8 @@ import AddVoluteerPage from './Pages/AddVlunteerPage/AddVoluteerPage';
 import PrivetRoute from './Pages/Privet/PrivetRoute';
 import VolunteerDtls from './Pages/NeedVolunteerPage/VolunteerDtls';
 import BeVolunteer from './Pages/BeVolunteer/BeVolunteer';
+import ManagePost from './Pages/MangeMyPost/ManagePost';
+import Updated from './Pages/Updated/Updated';
 
 
 const router = createBrowserRouter([
@@ -58,8 +60,18 @@ const router = createBrowserRouter([
       }, 
        
 
-
-
+     //manageMyPost Route 
+     {
+      path:"/managePost",
+    element:<ManagePost></ManagePost>
+    },
+    // updated//
+    {
+      path: '/update/:id',
+      element:<PrivetRoute> <Updated></Updated> </PrivetRoute> ,
+      loader: ({ params }) =>
+        fetch(`${import.meta.env.VITE_API_URL}/post/${params.id}`),
+    }, 
 
 
         {

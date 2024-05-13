@@ -6,7 +6,7 @@ const HomeCard = ({card}) => {
     const {post_title,Thumbnail ,_id,deadline,category} = card;
     return (
         <div>
-          <div className=" h-72 lg:h-64 p-4  mt-8 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-lg shadow-xl">
+          <div className=" h-96 lg:h-64 p-4  mt-8 bg-gradient-to-r from-sky-700 to-indigo-500 rounded-lg shadow-xl">
       <div className="flex justify-center -mt-16 md:justify-end">
         <img className="object-cover w-36 h-36 border-2 border-blue-500 rounded-full dark:border-blue-400" alt="Testimonial avatar" src={Thumbnail}/>
       </div>

@@ -9,8 +9,10 @@ const Home = () => {
         <div>
            <Slider></Slider>
            {/* Home Card  */}
-          <div>
-          <div  className="grid p-2 mt-20 lg:grid-cols-3 container mx-auto gap-10 "   >
+          <div className="mt-10"  >
+                     <h1 className=" text-center   uppercase text-sky-800 tracking-[.25em] font-bold text-3xl" > Volunteer Needs Now</h1>
+                   <hr className="container mx-auto mt-4  border-b-4   " />
+          <div  className="grid p-2 mt-10 lg:grid-cols-3 container mx-auto gap-10 "   >
                {data.map(singleData=> <HomeCard key={singleData._id}   card={singleData}   >      </HomeCard>              )         }
            </div>
 

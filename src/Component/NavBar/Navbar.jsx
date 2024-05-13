@@ -57,7 +57,7 @@ const Navbar = () => {
   
 </label>
 {user && (
-          <div className='dropdown dropdown-end z-50'>
+          <div className='dropdown   dropdown-end z-50'>
             <div
               tabIndex={0}
               role='button'
@@ -73,22 +73,18 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
+              className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52'
             >
               <li>
-                <Link to='/addpost' className='justify-between'>
+                <Link to='/addpost' className='justify-between  text-white text-lg '>
                   Add Volunteer Post
                 </Link>
               </li>
               <li>
-                <Link to='/my-posted-jobs'>My Posted Jobs</Link>
+                <Link className=" text-lg  text-white    " to='/managePost'>Manage My Post
+</Link>
               </li>
-              <li>
-                <Link to='/my-bids'>My Bids</Link>
-              </li>
-              <li>
-                <Link to='/bid-requests'>Bid Requests</Link>
-              </li>
+             
               
             </ul>
           </div>

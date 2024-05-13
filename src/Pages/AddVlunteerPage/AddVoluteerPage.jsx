@@ -142,7 +142,7 @@ const AddVoluteerPage = () => {
               </div>
               <div>
               <label className='text-gray-700 '>
-              User E-mail 
+              Organizer Email
               </label>
               <input
                 id='emailAddress'
@@ -157,7 +157,7 @@ const AddVoluteerPage = () => {
   
             <div>
               <label className='text-gray-700 ' >
-              User Name
+              Organizer  Name
               </label>
               <input
                 id='name'

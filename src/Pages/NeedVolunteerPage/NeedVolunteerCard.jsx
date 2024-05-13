@@ -8,7 +8,7 @@ const NeedVolunteerCard = ({volunteer}) => {
      
     return (
         <div>
-          <div className=" h-72 p-4 mt-4 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-lg shadow-xl">
+          <div className=" h-72 p-4 mt-8 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-lg shadow-xl">
       <div className="flex justify-center -mt-16 md:justify-end">
         <img className="object-cover w-36 h-36 border-2 border-blue-500 rounded-full dark:border-blue-400" alt="Testimonial avatar" src={Thumbnail}/>
       </div>
