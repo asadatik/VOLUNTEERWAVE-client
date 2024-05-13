@@ -37,10 +37,10 @@ const BeVolunteer = () => {
                 const Organizer_name= user_name
                 const Suggestion = form.suggestion.value
                 const Status =  form.status.value
-
+                const VolunteerId = _id
 
                 const Data = {
-                  post_title, Deadline,category,volunteers, description,volunteerEmail ,VolunteerName,Thumbnail,Location,Organizer_email,Organizer_name,Status,Suggestion
+                VolunteerId , post_title, Deadline,category,volunteers, description,volunteerEmail ,VolunteerName,Thumbnail,Location,Organizer_email,Organizer_name,Status,Suggestion
                 }
               console.log(Data)
                 ////////// data post in database data post in database
@@ -50,7 +50,7 @@ const BeVolunteer = () => {
                   Swal.fire({
                       position: "center",
                       icon: "success",
-                      title: "Add Post Successfully",
+                      title: "send Volunteer request Successfully",
                       showConfirmButton: false,
                       timer: 3000
                     });
