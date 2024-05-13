@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
 const VolunteerDtls = () => {
 
@@ -6,7 +6,7 @@ const VolunteerDtls = () => {
         console.log(Post)
         const {
             post_title, deadline,category,volunteers, description,user_email ,
-            user_name,Thumbnail,Location
+            user_name,Thumbnail,Location,_id
             } = Post || {}
 
 
@@ -23,7 +23,7 @@ const VolunteerDtls = () => {
         <div
             className="container flex flex-col justify-center  mt-20 px-6 py-10 mx-auto lg:absolute lg:inset-x-0">
             <h1 className="text-xl font-bold  uppercase lg:text-3xl text-sky-400">
-                    {post_title}
+                     {post_title} 
             </h1>
 
             <div className="mt-10  lg:flex lg:items-center">
@@ -31,7 +31,7 @@ const VolunteerDtls = () => {
 
                 <div className=" lg:px-10 lg:mt-0">
                     <h1   className=" text-gray-800 dark:text-white text-3xl font-bold  ">
-                       <span  className=""  >Category : </span>  {category}.
+                       Category :  <span className="uppercase  text-sky-300   " >{category}</span>.
                     </h1>
 
                     <p className="text-lg my-4 dark:text-white ">
@@ -45,13 +45,16 @@ const VolunteerDtls = () => {
                         <h1 className=" border-r-4 border-fuchsia-600 lg:pr-6 " >Deadline : {new Date(deadline).toLocaleDateString()}</h1>    
                         <h1>Volunteers needed : {volunteers}             </h1>
                     </div>  
-                    <div className=" mt-4  dark:text-white text-3xl font-bold   " >
+                    <div className=" my-4  dark:text-white text-3xl font-bold   " >
                         <h1 className=" mb-2  " >User Name : <span className="text-teal-300" >{user_name}</span>.</h1> 
 
                         <h1> Email Address : <span className="text-teal-300" >{user_email}</span>     </h1>
-                    </div> 
-                </div>
-            </div>
+                    </div>
+                    <div>
+                         <Link to={`/be/${_id}`}  >  <button className="btn bg-gradient-to-r text-xl text-black  from-indigo-500 via-purple-500 to-pink-500 ..."  > Be a Volunteer </button> </Link>
+                    </div>
+                               </div> 
+                              </div>
 
          
         </div>

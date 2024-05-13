@@ -16,6 +16,7 @@ import NeedVolunteer from './Pages/NeedVolunteerPage/NeedVolunteer';
 import AddVoluteerPage from './Pages/AddVlunteerPage/AddVoluteerPage';
 import PrivetRoute from './Pages/Privet/PrivetRoute';
 import VolunteerDtls from './Pages/NeedVolunteerPage/VolunteerDtls';
+import BeVolunteer from './Pages/BeVolunteer/BeVolunteer';
 
 
 const router = createBrowserRouter([
@@ -47,8 +48,13 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/post/${params.id}`),
       },
-
-
+      {
+        path: '/be/:id',
+        element:<PrivetRoute>  <BeVolunteer></BeVolunteer> </PrivetRoute> ,
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_API_URL}/post/${params.id}`),
+      }, 
+       
 
 
 

@@ -71,6 +71,7 @@ const AddVoluteerPage = () => {
                   id='Title'
                   name='title'
                   type='text'
+                  required
                   className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                 />
               </div>
@@ -83,6 +84,7 @@ const AddVoluteerPage = () => {
                   id='volunteers'
                   name='volunteers'
                   type='number'
+                  required
                   className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                 />
               </div>
@@ -120,6 +122,7 @@ const AddVoluteerPage = () => {
                 <input
                   id='Thumbnail'
                   name='Thumbnail'
+                  required
                   type='text'
                   className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                 />
@@ -131,6 +134,7 @@ const AddVoluteerPage = () => {
                 </label>
                 <input
                   id='Location'
+                  required
                   name='Location'
                   type='text'
                   className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
@@ -142,6 +146,7 @@ const AddVoluteerPage = () => {
               </label>
               <input
                 id='emailAddress'
+                required
                 type='email'
                 name='email'
                 disabled
@@ -156,6 +161,7 @@ const AddVoluteerPage = () => {
               </label>
               <input
                 id='name'
+                required
                 type='name'
                 name='name'
                 disabled
@@ -169,16 +175,18 @@ const AddVoluteerPage = () => {
             </div>
             <div className='flex flex-col  '>
               <label className='text-gray-700 ' >
+                
                 Description
               </label>
               <textarea
                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                 name='description'
+                required
                 id='description'
               ></textarea>
             </div>
             <div className='flex justify-start mt-2 '>
-              <button className='px-8 py-2.5 leading-5  text-xl font-medium text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
+              <button className='px-8 py-2.5 leading-5 outline outline-lime-600 bg-gradient-to-r from-violet-500 to-fuchsia-500  outline-offset-2 outline-4 text-xl font-medium text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
               Add Post 
               </button>
             </div>
