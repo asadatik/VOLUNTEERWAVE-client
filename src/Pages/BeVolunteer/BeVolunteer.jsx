@@ -54,7 +54,7 @@ const BeVolunteer = () => {
                       showConfirmButton: false,
                       timer: 3000
                     });
-                  navigate('/')
+                  navigate('/need')
                 }
                 
                 catch (err) {

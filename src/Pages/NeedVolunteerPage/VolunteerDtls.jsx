@@ -46,7 +46,7 @@ const VolunteerDtls = () => {
                         <h1>Volunteers needed : {volunteers}             </h1>
                     </div>  
                     <div className=" my-4  dark:text-white text-3xl font-bold   " >
-                        <h1 className=" mb-2  " >User Name : <span className="text-teal-300" >{user_name}</span>.</h1> 
+                        <h1 className=" mb-2  " >Organizer Name : <span className="text-teal-300" >{user_name}</span>.</h1> 
 
                         <h1> Email Address : <span className="text-teal-300" >{user_email}</span>     </h1>
                     </div>
