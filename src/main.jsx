@@ -63,7 +63,7 @@ const router = createBrowserRouter([
      //manageMyPost Route 
      {
       path:"/managePost",
-    element:<ManagePost></ManagePost>
+    element:      <PrivetRoute> <ManagePost></ManagePost></PrivetRoute>
     },
     // updated//
     {
@@ -72,7 +72,7 @@ const router = createBrowserRouter([
       loader: ({ params }) =>
         fetch(`${import.meta.env.VITE_API_URL}/post/${params.id}`),
     }, 
-
+   
 
         {
           path:"/login",

@@ -29,9 +29,22 @@ const Navbar = () => {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5  text-white w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </div>
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52">
-            <a className="text-xl  text-white " >  <NavLink   to="/">  Home </NavLink></a>
-            <a className="text-xl  text-white " >  <NavLink   to="/need">   Need Volunteer </NavLink></a>
-                      
+            <a className="text-lg  text-white " >  <NavLink   to="/">  Home </NavLink></a>
+            <a className="text-lg  text-white " >  <NavLink   to="/need">   Need Volunteer </NavLink></a>
+            <a >  <div className="dropdown dropdown-bottom">
+                     <div tabIndex={0} role="button" className="text-lg text-white font-semibold">My Profile</div>
+              <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-black rounded-box w-52">
+              <li>
+                <Link to='/addpost' className='justify-between  text-white text-lg '>
+                  Add Volunteer Post
+                </Link>
+              </li>
+              <li>
+                <Link className=" text-lg  text-white    " to='/managePost'>Manage My Post
+</Link>
+              </li> 
+                </ul>
+                                   </div>  </a>          
             </ul>
           </div>
              <a className="  lg:text-3xl font-extrabold  uppercase text-indigo-300  "> Volunteer<span className="text-pink-400" >Wave</span> </a>
@@ -41,6 +54,20 @@ const Navbar = () => {
           <ul className="menu menu-horizontal space-x-12 ">
            <a className="text-2xl text-white font-semibold " >  <NavLink   to="/">Home</NavLink></a>
            <a className="text-2xl text-white font-semibold " >  <NavLink   to="/need">Need Volunteer</NavLink></a>
+            <a >  <div className="dropdown dropdown-bottom">
+                     <div tabIndex={0} role="button" className="text-2xl text-white font-semibold">My Profile</div>
+              <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-black rounded-box w-52">
+              <li>
+                <Link to='/addpost' className='justify-between  text-white text-lg '>
+                  Add Volunteer Post
+                </Link>
+              </li>
+              <li>
+                <Link className=" text-lg  text-white    " to='/managePost'>Manage My Post
+</Link>
+              </li> 
+                </ul>
+                                   </div>  </a>
           </ul>
         </div>
         <div className="navbar-end lg:space-x-2 "> 
@@ -63,7 +90,7 @@ const Navbar = () => {
               role='button'
               className='btn btn-ghost btn-circle avatar'
             >
-              <div title={user?.displayName} className='w-10 rounded-full'>
+              <div title={user?.displayName} className='w-12  rounded-full'>
                 <img
                   referrerPolicy='no-referrer'
                   alt='User Profile Photo'
@@ -91,7 +118,7 @@ const Navbar = () => {
         )}
                  
                     
-                     {user ? <Link onClick={LogOut} className="  p-1  rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white  text-xl   "  >Log Out</Link> 
+                     {user ? <Link onClick={LogOut} className="  p-1  bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white  text-xl   "  >Log Out</Link> 
                         :  <div >
                       <a className="text-2xl text-white lg:mx-3  " >    <NavLink  to="/login"> Login    </NavLink></a>   
                       <a className="text-2xl text-white   " >    <NavLink  to="/signup"> Register   </NavLink></a>

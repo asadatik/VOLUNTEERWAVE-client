@@ -2,11 +2,14 @@ import{ useContext, useEffect, useState } from 'react';
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";     
 import { Link } from 'react-router-dom';
-
+import { FcCancel } from "react-icons/fc";
 const ManagePost = () => {
     const{user} = useContext(AuthContext); 
-    const [handle,setHandle]= useState(false);                 
+    const [handle,setHandle]= useState(false);
+
         const [item, setItem] = useState([]);
+        const [request,setrequest ] = useState([]);
+    // posted api 
         console.log(item)
         useEffect(() => {
           fetch(`${import.meta.env.VITE_API_URL}/managepost/${user?.email}`)
@@ -15,7 +18,8 @@ const ManagePost = () => {
               setItem(data);
             });
         }, [user,handle]);
-  const Delete = (id) => {
+
+        const Delete = (id) => {
           console.log(id);
           Swal.fire({
             title: "Are you sure?",
@@ -45,6 +49,56 @@ const ManagePost = () => {
             }
           });
         }
+
+
+
+    //Requested Api
+      
+        console.log(request)
+        useEffect(() => {
+          fetch(`${import.meta.env.VITE_API_URL}/volunteer/${user?.email}`)
+            .then((res) => res.json())
+            .then((data) => {
+             setrequest(data);
+            });
+        }, [user,handle]);
+
+    //  req-cancel
+
+    const cancleReq = (id) => {
+      console.log(id);
+      Swal.fire({
+        title: "Do you Cancel this  Request?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: " Confirm!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          fetch(`${import.meta.env.VITE_API_URL}/Request/${id}`, {        
+            method: "DELETE",
+          
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.deletedCount > 0) {
+                Swal.fire({
+                  title: "Canceled!",
+                  text: "Your Request Have been Canceled.",
+                  icon: "success",
+                });
+                setHandle(!handle)
+              }
+            });
+        }
+      });
+    }
+
+
+
+ 
     return (
        <div  className=' my-16 '       >
         {/* Table 01 */}
@@ -73,7 +127,7 @@ const ManagePost = () => {
   
                       <th
                         scope='col'
-                        className='px-4 py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'
+                        className=' py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'
                       >
                         <span>Deadline</span>
                       </th>
@@ -82,17 +136,17 @@ const ManagePost = () => {
   
                       <th
                         scope='col'
-                        className='px-4 py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'
+                        className=' py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'
                       >
                         Category
                       </th>
   
                         
   
-                      <th className='px-4 py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'>
+                      <th className=' py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'>
                         Update 
                       </th>
-                      <th className='px-4 py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'>
+                      <th className=' py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'>
                         Delete
                       </th>
                       </tr>
@@ -113,7 +167,7 @@ post_title
                    
                      </td>
                     <td>
-                    <button  onClick={()=>Delete(i._id)}  className='btn btn-xs h-10 text-xl bg-gradient-to-r from-violet-500 to-fuchsia-300  text-black ' >delete</button>  
+                    <button  onClick={()=>Delete(i._id)}  className='btn btn-xs h-10 text-xl bg-gradient-to-i from-violet-500 to-fuchsia-300  text-black ' >delete</button>  
 
                     </td>
                          </tr>
@@ -133,10 +187,10 @@ post_title
            </section>
 
      {/*Table-2  */}
-           <section className='container p-4 mt-8  border-4 border-cyan-500 bg-sky-100  mx-auto pt-12'>
+           <section className='container p-4 mt-8  border-4 border-cyan-500 bg-sky-100  mx-auto pt-10'>
         <div className='text-center'>
-          <h2 className='text-2xl font-semibold        '> 
-          My ``volunteer request`` Post: <span className='text-green-500 font-bold   '  > {item.length} </span></h2>
+          <h2 className='text-3xl font-bold text-black       '> 
+          My ``volunteer request`` Post: <span className='text-green-500 font-bold   '  > {request.length} </span></h2>
   
         </div>
   
@@ -149,7 +203,7 @@ post_title
                     <tr>
                       <th
                         scope='col'
-                        className='py-3.5 px-4 text-xl font-normal text-left rtl:text-right text-gray-500'
+                        className='py-3.5 px-8 text-xl font-normal text-left rtl:text-right text-gray-500'
                       >
                         <div className='flex items-center gap-x-3'>
                           <span>Title</span>
@@ -158,7 +212,7 @@ post_title
   
                       <th
                         scope='col'
-                        className='px-4 py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'
+                        className=' py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'
                       >
                         <span>Deadline</span>
                       </th>
@@ -167,18 +221,18 @@ post_title
   
                       <th
                         scope='col'
-                        className='px-4 py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'
+                        className='py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'
                       >
                         Category
                       </th>
   
                         
   
-                      <th className='px-4 py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'>
-                        Update 
+                      <th className=' py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'>
+                        Location
                       </th>
-                      <th className='px-4 py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'>
-                        Delete
+                      <th className=' py-3.5 text-xl font-normal text-left rtl:text-right text-gray-500'>
+                        Request Cancel
                       </th>
                       </tr>
                   </thead>
@@ -186,21 +240,14 @@ post_title
                   <tbody>
                 
                  {
-                   item?.map(i  => (    
-                         <tr   key={i._id} className='font-medium '  >
-                      <td className='p-4' > {i. 
-post_title
-}  </td>  
-                   <td>  {new Date(i.deadline).toLocaleDateString()}  </td>
-                   <td>  {i.category}  </td>
+                   request?.map(r  => (    
+                         <tr   key={r._id} className='font-medium  text-black '  >
+                      <td className='p-4   ' > {r.post_title}  </td>  
+                   <td   >  {new Date(r.Deadline).toLocaleDateString()}  </td>
+                   <td  >  {r.category}  </td>
                 
-                   <td > <Link to={`/update/${i._id}`} >   <button  className='btn btn-xs h-10  text-xl bg-indigo-300 text-black ' >Update</button>          </Link>
-                   
-                     </td>
-                    <td>
-                    <button  onClick={()=>Delete(i._id)}  className='btn btn-xs h-10 text-xl bg-gradient-to-r from-violet-500 to-fuchsia-300  text-black ' >delete</button>  
-
-                    </td>
+                   <td   >    {r.Location}  </td>
+                    <td  >   <button onClick={()=>cancleReq(r._id)} className='btn flex text-xl bg-sky-300  text-black '> Cancel  <FcCancel />  </button>   </td>
                          </tr>
                           
                    ))

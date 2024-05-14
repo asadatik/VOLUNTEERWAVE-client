@@ -58,7 +58,7 @@ const Updated = () => {
         
         catch (err) {
           console.log(err)
-           toast.error('Something Wrong ')
+           toast.error('Something Wrong')
         }
     
  

@@ -104,16 +104,13 @@ const AddVoluteerPage = () => {
                 <label className='text-gray-700 '>
                   Category
                 </label>
-                <select
-                  name='category'
+                <input
                   id='category'
-                  className='border p-2 rounded-md'
-                >
-                  <option value='healthcare'>healthcare</option>
-                  <option value='education'>education</option>
-                  <option value='social service'>social service</option>
-                  <option value='animal welfare'>animal welfare</option>
-                </select>
+                  name='category'
+                  required
+                  type='text'
+                  className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
+                />
               </div>
               <div>
                 <label className='text-gray-700 ' >
