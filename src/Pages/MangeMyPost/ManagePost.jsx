@@ -1,5 +1,6 @@
 import{ useContext, useEffect, useState } from 'react';
 import { AuthContext } from "../../Provider/AuthProvider";
+
 import Swal from "sweetalert2";     
 import { Link } from 'react-router-dom';
 import { FcCancel } from "react-icons/fc";
@@ -97,13 +98,26 @@ const ManagePost = () => {
     }
 
 
-
- 
     return (
        <div  className=' my-16 '       >
         {/* Table 01 */}
-           <section className='container p-4   border-4 border-yellow-400 bg-base-300   mx-auto pt-12'>
-        <div className='text-center'>
+              
+            <div > {item.length === 0 ?
+              <div className=' m-10   text-center border-2 border-cyan-500 py-10 ' > 
+            
+              <div>
+              <h2 className='text-3xl font-bold text-black       '> 
+             My ``volunteer request`` Post: <span className='text-green-500 font-bold   '  > {item.length} </span></h2>    
+                 <h2 className='mt-4  text-3xl text-red-400 font-semibold  '  >  Empty  your Need Volunteer Post.   </h2>
+
+              </div>
+                 <div className='flex justify-center  mt-6'  > <img className=' h-96   '  src={`https://i.ibb.co/f2TKmmd/no-data-concept-illustration-114360-536-1.jpg`} alt="" /> </div>
+          
+           </div>
+             
+             :
+                   <section className='container p-4   border-4 border-yellow-400 bg-base-300   mx-auto pt-12'>
+            <div className='text-center'>
           <h2 className='text-3xl font-bold        '> 
           My ``need volunteer`` Post : <span className='text-green-500 font-bold   '  > {item.length} </span></h2>
   
@@ -163,11 +177,11 @@ post_title
                    <td>  {new Date(i.deadline).toLocaleDateString()}  </td>
                    <td>  {i.category}  </td>
                 
-                   <td > <Link to={`/update/${i._id}`} >   <button  className='btn btn-xs h-10  text-xl bg-indigo-300 text-black ' >Update</button>          </Link>
+                   <td > <Link to={`/update/${i._id}`} >   <button  className='btn btn-xs h-10  text-xl bg-indigo-400 text-black ' >Update</button>          </Link>
                    
                      </td>
                     <td>
-                    <button  onClick={()=>Delete(i._id)}  className='btn btn-xs h-10 text-xl bg-gradient-to-i from-violet-500 to-fuchsia-300  text-black ' >delete</button>  
+                    <button  onClick={()=>Delete(i._id)}  className='btn btn-xs h-10 text-xl bg-violet-300  text-black ' >delete</button>  
 
                     </td>
                          </tr>
@@ -184,11 +198,30 @@ post_title
             </div>
           </div>
         </div>
-           </section>
+                   </section> }
+               </div>
+
+
+
+
 
      {/*Table-2  */}
-           <section className='container p-4 mt-8  border-4 border-cyan-500 bg-sky-100  mx-auto pt-10'>
-        <div className='text-center'>
+            <div>      {request.length === 0 ? 
+                      <div className=' m-10   text-center border-2 border-cyan-500 py-10 ' > 
+            
+                        <div>
+                        <h2 className='text-3xl font-bold text-black       '> 
+                       My ``volunteer request`` Post: <span className='text-green-500 font-bold   '  > {request.length} </span></h2>    
+                           <h2 className='mt-4  text-3xl text-red-400 font-semibold  '  >  Empty  your Volunteer Request .   </h2>
+
+                        </div>
+                           <div className='flex justify-center mt-6 '  > <img  className='h-96' src={`https://i.ibb.co/f2TKmmd/no-data-concept-illustration-114360-536-1.jpg`} alt="" /> </div>
+                    
+                     </div> :   
+              
+              
+               <section className='container p-4 mt-8  border-4 border-cyan-500 bg-sky-100  mx-auto pt-10'>
+           <div className='text-center'>
           <h2 className='text-3xl font-bold text-black       '> 
           My ``volunteer request`` Post: <span className='text-green-500 font-bold   '  > {request.length} </span></h2>
   
@@ -262,8 +295,10 @@ post_title
             </div>
           </div>
         </div>
-        </section>
-       </div>
+               </section>}
+               
+               </div> 
+      </div>
     );
 };
 

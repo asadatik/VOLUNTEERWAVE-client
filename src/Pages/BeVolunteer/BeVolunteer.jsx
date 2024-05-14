@@ -62,7 +62,11 @@ const BeVolunteer = () => {
                 }
               }
 
-
+              const handleStatus = async (id) => {
+                console.log(id)
+                 const {data} =  await axios.patch(`${import.meta.env.VITE_API_URL}/number/${id}`,{Post})         
+              console.log(data)
+              }
 
     return (
         <div>
@@ -73,7 +77,7 @@ const BeVolunteer = () => {
           Volunteer Request Form
           </h2>
           </div>
-          <form onSubmit={handleFormSubmit}>
+          <form    onSubmit={handleFormSubmit}>
             <div className='grid grid-cols-1 gap-2 mt-4 sm:grid-cols-2'>
               <div>
                 <label className='text-gray-700 ' >
@@ -269,7 +273,7 @@ const BeVolunteer = () => {
               ></textarea>
             </div>
             <div className='flex justify-center mt-6  '>
-              <button className='px-8 py-2.5  w-1/2 leading-5 outline outline-lime-600 bg-gradient-to-r from-violet-500 to-fuchsia-500  outline-offset-2 outline-4 text-xl font-medium text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
+              <button onClick={() => handleStatus(_id)}   className='px-8 py-2.5  w-1/2 leading-5 outline outline-lime-600 bg-gradient-to-r from-violet-500 to-fuchsia-500  outline-offset-2 outline-4 text-xl font-medium text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
               Request
               </button>
             </div>

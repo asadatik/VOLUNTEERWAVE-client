@@ -23,7 +23,7 @@ const Updated = () => {
 
 
     const { user } = useContext(AuthContext)
-    const navigate = useNavigate()
+    const navigate = useNavigate() 
   
     const [startDate, setStartDate] = useState(new Date())
     const handleFormUpdated = async e => {
@@ -58,7 +58,7 @@ const Updated = () => {
         
         catch (err) {
           console.log(err)
-           toast.error('Something Wrong')
+           toast.error('Something Wrong')         
         }
     
  
