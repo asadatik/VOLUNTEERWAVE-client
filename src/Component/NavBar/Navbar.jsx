@@ -54,7 +54,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal space-x-12 ">
            <a className="text-2xl text-white font-semibold " >  <NavLink   to="/">Home</NavLink></a>
            <a className="text-2xl text-white font-semibold " >  <NavLink   to="/need">Need Volunteer</NavLink></a>
-            <a >  <div className="dropdown dropdown-bottom">
+            <a >  <div className="dropdown dropdown-bottom z-50  ">
                      <div tabIndex={0} role="button" className="text-2xl text-white font-semibold">My Profile</div>
               <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-black rounded-box w-52">
               <li>
