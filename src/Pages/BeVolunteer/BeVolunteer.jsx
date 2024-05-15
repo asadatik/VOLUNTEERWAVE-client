@@ -5,6 +5,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -70,7 +71,7 @@ const BeVolunteer = () => {
 
     return (
         <div>
-               
+               <Helmet><title> Be Volunteer Of {post_title}   </title></Helmet>
                   <section className=' border-2 border-amber-300 my-4 p-2 md:p-6 mx-auto  bg-slate-300 rounded-md shadow-md '>
           <div className=' mb-4 border-b-4 border-cyan-400   p-2  ' >
           <h2 className=' tracking-[.25em]  text-3xl font-bold text-gray-700 text-center uppercase'>

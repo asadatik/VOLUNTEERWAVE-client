@@ -4,6 +4,7 @@ import {  Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -59,6 +60,8 @@ const Login = () => {
     }   
     return (
         <div className="hero  rounded-3xl  "  style={{backgroundImage: 'url(https://i.ibb.co/7Nntrwf/user-typing-login-and-password-cyber-security-concept-1.jpg)'}}  > 
+              <Helmet><title > Login Page   </title></Helmet>
+           
             <div className="hero-content  flex-col lg:flex-row">
                       <div className='w-1/2'>
                     <img src={`https://i.ibb.co/7Nntrwf/user-typing-login-and-password-cyber-security-concept-1.jpg`} alt="" />

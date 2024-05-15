@@ -4,6 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";     
 import { Link } from 'react-router-dom';
 import { FcCancel } from "react-icons/fc";
+import { Helmet } from 'react-helmet-async';
 const ManagePost = () => {
     const{user} = useContext(AuthContext); 
     const [handle,setHandle]= useState(false);
@@ -100,6 +101,9 @@ const ManagePost = () => {
 
     return (
        <div  className=' my-16 '       >
+
+             <Helmet> <title>     Manage My Post          </title>           </Helmet>
+         
         {/* Table 01 */}
               
             <div > {item.length === 0 ?

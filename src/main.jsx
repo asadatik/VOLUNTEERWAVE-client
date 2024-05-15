@@ -19,6 +19,7 @@ import VolunteerDtls from './Pages/NeedVolunteerPage/VolunteerDtls';
 import BeVolunteer from './Pages/BeVolunteer/BeVolunteer';
 import ManagePost from './Pages/MangeMyPost/ManagePost';
 import Updated from './Pages/Updated/Updated';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 const router = createBrowserRouter([
@@ -90,8 +91,10 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
- <AuthProvider>
- <RouterProvider router={router} />
- </AuthProvider>
+     <AuthProvider>
+             <HelmetProvider>
+          <RouterProvider router={router} />
+             </HelmetProvider>
+     </AuthProvider>
   </React.StrictMode>,
 )

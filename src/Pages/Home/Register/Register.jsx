@@ -13,6 +13,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -81,33 +82,41 @@ const HandleLogin = (e)=>{
 
 
     return (
-        <div className="mt-10" >
-       {/* <Helmet>  <title> Register Page  </title>      </Helmet> */}
-         
-           <div className="mx-auto lg:w-1/2 mt-8 ">
-       <h1 className="text-3xl font-bold text-center"  >  Create An Account</h1> 
+          <div className="mt-10    hero  " style={{backgroundImage: 'url(https://i.ibb.co/7Nntrwf/user-typing-login-and-password-cyber-security-concept-1.jpg)'}}  >
+          <Helmet>  <title> Register Page  </title>      </Helmet>
+             
+             
+              <div  className=" my-20  lg:flex  " >
+
+
+              <div className="mt-10    " >
+                   <img src="https://i.ibb.co/hYd59np/sign-up-concept-illustration-114360-7895-1.jpg" alt="" className="rounded-l-xl" />    
+              </div>
+
+               <div className="mx-auto rounded-r-xl  px-6 py-4    md:px-8 mt-8  bg-base-200  ">
+       <h1 className="lg:text-4xl font-bold text-center  border-b-4 border-y-indigo-600 pb-4 "  >  Create A New  Account</h1> 
             <form onSubmit={HandleLogin} className="card-body">
             <div className="form-control">
         <label className="label">
-        <span className="label-text"> Your  Name</span>
+        <span className="label-text font-medium "> Your  Name</span>
       </label>
       <input type="text"  placeholder="Your Name"  name="name" className="input input-bordered" required />
     </div>
     <div className="form-control">
       <label className="label">
-        <span className="label-text"> Your  photo Url  </span>
+        <span className="label-text font-medium "> Your  photo Url  </span>
       </label>
       <input type="text" placeholder="photo url"  name="photo" className="input input-bordered" required />
     </div>
     <div className="form-control">
       <label className="label">
-        <span className="label-text">   Email</span>
+        <span className="label-text font-medium ">   Email</span>
       </label>
       <input type="email" placeholder="Enter Your email"  name="email" className="input input-bordered" required />
     </div>
     <div className="form-control">
       <label className="label">
-        <span className="label-text">Password</span>
+        <span className="label-text font-medium ">Password</span>
       </label>
           
         <div className="relative  "  > 
@@ -128,14 +137,17 @@ const HandleLogin = (e)=>{
     </div>
     {  Error && <p className=" text-xl lg:ml-10 flex gap-1 text-red-600 " ><MdOutlineError  className="text-2xl"/>{Error}</p>     }
     <div className="form-control mt-6">
-      <button className="btn text-2xl font-semibold btn-secondary">Register</button>       
+      <button className="btn text-2xl font-semibold text-white bg-gradient-to-r from-sky-500 to-indigo-500">Register</button>       
     </div>
   </form>
-      <h1 className="text-center text-xl  "  >Already have an Account ? < Link to='/login' className="text-lime-600" >Login</Link></h1>
-           </div>
+      <h1 className="text-center text-xl  "  >Already have an Account ? < Link to='/login' className=" font-bold text-green-700 text-2xl  " >Login</Link></h1>
+               </div>
+
+
+              </div>
    
            <ToastContainer />
-    </div>
+           </div>
     );
 };
 

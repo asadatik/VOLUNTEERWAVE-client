@@ -70,7 +70,7 @@ const Navbar = () => {
                                    </div>  </a>
           </ul>
         </div>
-        <div className="navbar-end lg:space-x-2 "> 
+        <div className="navbar-end lg:space-x-10 "> 
         <label className="swap swap-rotate">
   
   {/* this hidden checkbox controls the state */}
@@ -84,7 +84,7 @@ const Navbar = () => {
   
 </label>
 {user && (
-          <div className='dropdown   dropdown-end z-50'>
+          <div className='dropdown  dropdown-end z-50'>
             <div
               tabIndex={0}
               role='button'
@@ -118,7 +118,7 @@ const Navbar = () => {
         )}
                  
                     
-                     {user ? <Link onClick={LogOut} className="  p-1  bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white  text-xl   "  >Log Out</Link> 
+                     {user ? <Link onClick={LogOut} className="  p-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white  text-xl   "  >Log Out</Link> 
                         :  <div >
                       <a className="text-2xl text-white lg:mx-3  " >    <NavLink  to="/login"> Login    </NavLink></a>   
                       <a className="text-2xl text-white   " >    <NavLink  to="/signup"> Register   </NavLink></a>

@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 const VolunteerDtls = () => {
 
         const Post = useLoaderData()
@@ -14,7 +15,11 @@ console.log(volunteers)
 
     return (
         <div   >
-             
+            <Helmet>
+                 <title>
+                     Volunteer Details || {post_title} 
+                    </title> 
+                </Helmet> 
     <section className="bg-white border-8 border-y-cyan-600 border-x-yellow-400   dark:bg-gray-900">
     <div className="relative flex">
         <div className="min-h-screen lg:w-1/3"></div>

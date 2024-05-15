@@ -10,6 +10,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet-async';
 
 const Updated = () => {
 
@@ -70,6 +71,7 @@ const Updated = () => {
 
     return (
         <div>
+          <Helmet><title>  Update Post || {post_title}  </title></Helmet>
              <div className="  "  style={{backgroundImage:'url(https://i.ibb.co/dtpMPYf/global-volunteer-solidarity-hands-up-banner-with-earth-map-vector-1017-48268-1.jpg)'}}    >
                      
                      <div className='flex hero-overlay bg-opacity-1 justify-center items-center my-12'    >

@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../Provider/AuthProvider'
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const AddVoluteerPage = () => {
 
@@ -53,7 +54,7 @@ const AddVoluteerPage = () => {
     return (
 
        <div className="  "  style={{backgroundImage:'url(https://i.ibb.co/dtpMPYf/global-volunteer-solidarity-hands-up-banner-with-earth-map-vector-1017-48268-1.jpg)'}}    >
-                     
+                <Helmet>    <title> Add Volunteer Post   </title>          </Helmet>       
         <div className='flex hero-overlay bg-opacity-1 justify-center items-center my-12'    >
         <section className=' border-2 border-amber-300 my-4 p-2 md:p-6 mx-auto  bg-slate-300 rounded-md shadow-md '>
           <div className=' mb-4 border-b-4 border-cyan-400   p-2  ' >

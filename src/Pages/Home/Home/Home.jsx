@@ -1,12 +1,18 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Slider from "../Slider/Slider";
 import HomeCard from "../HomeCard/HomeCard";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
       const data = useLoaderData()
         console.log(data)
     return (
         <div>
+       <Helmet>
+
+        <title> VOLUNTEERWAVE || Home </title>
+       </Helmet>
+
            <Slider></Slider>
            {/* Home Card  */}
           <div className="mt-10"  >
