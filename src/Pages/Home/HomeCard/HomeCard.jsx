@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
-
+// import AOS from 'aos';
+// import 'aos/dist/aos.css'; 
+// AOS.init();
 
 const HomeCard = ({card}) => {
 
     const {post_title,Thumbnail ,_id,deadline,category} = card;
     return (
+        
         <div>
           <div className=" h-96 lg:h-72 p-4  mt-8 bg-gradient-to-r from-sky-700 to-indigo-500 rounded-lg shadow-xl">
       <div className="flex justify-center -mt-16 md:justify-end">

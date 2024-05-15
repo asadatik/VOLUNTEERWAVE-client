@@ -1,7 +1,9 @@
 import { Link, useLoaderData } from "react-router-dom";
-import Slider from "../Slider/Slider";
+
 import HomeCard from "../HomeCard/HomeCard";
 import { Helmet } from "react-helmet-async";
+import Slidertt from "./Slidertt";
+
 
 const Home = () => {
       const data = useLoaderData()
@@ -13,14 +15,18 @@ const Home = () => {
         <title> VOLUNTEERWAVE || Home </title>
        </Helmet>
 
-           <Slider></Slider>
+          <div className=""  >
+         
+            <Slidertt></Slidertt>
+          </div>
            {/* Home Card  */}
           <div className="mt-10"  >
-                     <h1 className=" text-center   uppercase text-sky-800 tracking-[.25em] font-bold text-3xl" > Volunteer Needs Now</h1>
+            
+                      <h1  className=" text-center   uppercase text-sky-800 tracking-[.25em] font-bold text-3xl" > Volunteer Needs Now</h1>
                    <hr className="container mx-auto mt-4  border-b-4   " />
-          <div  className="grid p-2 mt-10 lg:grid-cols-3 container mx-auto gap-10 "   >
+             <div  className="grid p-2 mt-10 lg:grid-cols-3 container mx-auto gap-10 "   >
                {data.map(singleData=> <HomeCard key={singleData._id}   card={singleData}   >      </HomeCard>              )         }
-           </div>
+             </div>
 
          <Link to='/need' >  <div className="flex  justify-end container mx-auto mt-4  " >
             <a  className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-white rounded-md dark:bg-gray-800 dark:text-gray-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white dark:hover:text-gray-200">
@@ -36,8 +42,9 @@ const Home = () => {
              </a>
           </div>     </Link>
 
-          </div>
+          
            {/*  */}
+        </div>
         </div>
     );
 };

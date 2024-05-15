@@ -1,6 +1,9 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
+ 
+
 const VolunteerDtls = () => {
 
         const Post = useLoaderData()
@@ -9,6 +12,16 @@ const VolunteerDtls = () => {
             post_title, deadline,category,volunteers, description,user_email ,
             user_name,Thumbnail,Location,_id
             } = Post || {}
+
+const disable = ( ) =>{
+    Swal.fire({
+        icon: "error",
+        title: "Oops...Sorry ",
+         text: "No Needed Volunteer At This Moment!",
+    
+  });     
+}
+
 
 
 console.log(volunteers)
@@ -58,7 +71,7 @@ console.log(volunteers)
                      <div>
                        {
                         volunteers===0 ? <div>
-                           <button  className="btn  disabled bg-gradient-to-r text-xl text-black  from-indigo-500 via-purple-500 to-pink-500 ..."  > Be a Volunteer </button> 
+                           <button onClick={disable} className="btn  disabled bg-gradient-to-r text-xl text-black  from-indigo-500 via-purple-500 to-pink-500 ..."  > Be a Volunteer </button> 
                    </div> :  <div>
                          <Link to={`/be/${_id}`}  >  <button className="btn bg-gradient-to-r text-xl text-black  from-indigo-500 via-purple-500 to-pink-500 ..."  > Be a Volunteer </button> </Link>
                     </div>   

@@ -2,6 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import NeedVolunteerCard from "./NeedVolunteerCard";
 import { FiAlignJustify } from "react-icons/fi";
 import { TfiLayoutGrid3Alt } from "react-icons/tfi";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
@@ -12,7 +14,7 @@ const NeedVolunteer = () => {
         const NeedVolunteer = useLoaderData();
         console.log(NeedVolunteer);
 
-       
+        AOS.init();     
        
     return (
           
