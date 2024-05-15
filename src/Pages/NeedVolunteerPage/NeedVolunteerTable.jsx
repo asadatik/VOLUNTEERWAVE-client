@@ -1,8 +1,20 @@
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const NeedVolunteerTable = ({need}) => {
 
     console.log(need.length)
+    const disable = ( ) =>{
+        Swal.fire({
+            icon: "error",
+            title: "Oops...Sorry ",
+             text: "No Needed Volunteer At This Moment!",
+        
+      });     
+    }
+       
+
 
     return (
        <div>
@@ -79,8 +91,21 @@ const NeedVolunteerTable = ({need}) => {
                                    {n.volunteers}
                                 </td>
                                 <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-                                        <button className=" px-1 bg-gradient-to-r rounded-xl from-violet-500 to-fuchsia-500 text-white text-lg   "  > Details        </button>
-                                    
+                                     
+                                          {
+                                             <div >
+                                             {
+                                                             n.volunteers===0 ? <div>
+                                                                {/* <button onClick={disable} className="btn  disabled bg-gradient-to-r text-xl text-black  from-indigo-500 via-purple-500 to-pink-500 ..."  >  View Details </button>  */}
+                                                                <button  onClick={disable} className=" px-1 bg-gradient-to-r disabled rounded-xl from-violet-500 to-fuchsia-500 text-white text-lg   "  > Details        </button>
+                                                        </div> :  <div>
+                                                              {/* <Link to={`/post/${_id}`}  >  <button className="btn bg-gradient-to-r text-xl text-black  from-indigo-500 via-purple-500 to-pink-500 ..."  >  View Details</button> </Link> */}
+                                                               <Link  to={`/post/${n._id}`}  >            <button   className=" px-1 bg-gradient-to-r disabled rounded-xl from-violet-500 to-fuchsia-500 text-white text-lg   "  > Details        </button>                     </Link>
+                                                       
+                                                         </div>   
+                                                            }
+                                             </div>
+                                          }
                                     </td>
                                 <td className="px-4 py-4 text-sm whitespace-nowrap">
                                     

@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-// import AOS from 'aos';
-// import 'aos/dist/aos.css'; 
-// AOS.init();
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const HomeCard = ({card}) => {
 
     const {post_title,Thumbnail ,_id,deadline,category} = card;
     return (
         
-        <div>
+        <div       data-aos="zoom-in-down "    >
           <div className=" h-96 lg:h-72 p-4  mt-8 bg-gradient-to-r from-sky-700 to-indigo-500 rounded-lg shadow-xl">
       <div className="flex justify-center -mt-16 md:justify-end">
         <img className="object-cover w-36 h-36 border-2 border-blue-500 rounded-full dark:border-blue-400" alt="Testimonial avatar" src={Thumbnail}/>
