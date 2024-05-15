@@ -103,12 +103,12 @@ const ManagePost = () => {
         {/* Table 01 */}
               
             <div > {item.length === 0 ?
-              <div className=' m-10   text-center border-2 border-cyan-500 py-10 ' > 
+              <div className=' lg:m-10 m-4 text-center border-2 border-yellow-400  py-10 ' > 
             
               <div>
-              <h2 className='text-3xl font-bold text-black       '> 
+              <h2 className='text-3xl font-bold text-black   uppercase '> 
              My ``volunteer request`` Post: <span className='text-green-500 font-bold   '  > {item.length} </span></h2>    
-                 <h2 className='mt-4  text-3xl text-red-400 font-semibold  '  >  Empty  your Need Volunteer Post.   </h2>
+                 <h2 className='mt-2  text-3xl text-red-400 font-semibold  '  >  Empty  your Need Volunteer Post.   </h2>
 
               </div>
                  <div className='flex justify-center  mt-6'  > <img className=' h-96   '  src={`https://i.ibb.co/f2TKmmd/no-data-concept-illustration-114360-536-1.jpg`} alt="" /> </div>
@@ -181,7 +181,7 @@ post_title
                    
                      </td>
                     <td>
-                    <button  onClick={()=>Delete(i._id)}  className='btn btn-xs h-10 text-xl bg-violet-300  text-black ' >delete</button>  
+                    <button  onClick={()=>Delete(i._id)}  className='btn btn-xs h-10 text-xl bg-violet-300  text-black ' >delete  <FcCancel className='text-2xl' />  </button>  
 
                     </td>
                          </tr>
@@ -207,12 +207,12 @@ post_title
 
      {/*Table-2  */}
             <div>      {request.length === 0 ? 
-                      <div className=' m-10   text-center border-2 border-cyan-500 py-10 ' > 
+                      <div className=' lg:m-10 m-4  text-center border-2 border-cyan-500 py-10 ' > 
             
                         <div>
-                        <h2 className='text-3xl font-bold text-black       '> 
-                       My ``volunteer request`` Post: <span className='text-green-500 font-bold   '  > {request.length} </span></h2>    
-                           <h2 className='mt-4  text-3xl text-red-400 font-semibold  '  >  Empty  your Volunteer Request .   </h2>
+                        <h2 className='text-3xl font-bold text-black uppercase      '> 
+                       My ``volunteer request`` Post: <span className='text-green-500 font-bold  '  > {request.length} </span></h2>    
+                           <h2 className='mt-2 text-3xl text-red-400 font-semibold  '  >  Empty  your Volunteer Request .   </h2>
 
                         </div>
                            <div className='flex justify-center mt-6 '  > <img  className='h-96' src={`https://i.ibb.co/f2TKmmd/no-data-concept-illustration-114360-536-1.jpg`} alt="" /> </div>

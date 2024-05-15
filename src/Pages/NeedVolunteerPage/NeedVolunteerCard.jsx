@@ -15,7 +15,7 @@ const NeedVolunteerCard = ({volunteer}) => {
 
      <h2 className="mt-2 text-xl font-bold  text-gray-800 dark:text-white md:mt-0">{post_title}  </h2>
 
-      <p className="mt-2 lg:ml-4 text-base font-bold  text-amber-300  ">{description.substring(0, 130)}....  </p>
+      <p className="mt-2 lg:ml-4 text-base font-bold  text-amber-300  ">{description.substring(0, 100)}....  </p>
       <div className="mt-6"   > <Link to={`/post/${_id}`} > <button className="btn bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ... text-white text-lg  " > View Details </button>  </Link> </div>
      
 </div>

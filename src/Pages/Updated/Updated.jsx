@@ -34,7 +34,7 @@ const Updated = () => {
         const user_name=user?.displayName
         const deadline = startDate
         const category = form.category.value
-        const volunteers = form.volunteers.value
+        const volunteers =parseInt(form.volunteers.value)
         const description = form.description.value
         const Thumbnail = form.Thumbnail.value
         const Location = form.Location.value

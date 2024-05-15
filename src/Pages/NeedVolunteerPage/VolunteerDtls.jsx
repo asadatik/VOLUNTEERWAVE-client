@@ -10,7 +10,7 @@ const VolunteerDtls = () => {
             } = Post || {}
 
 
-
+console.log(volunteers)
 
     return (
         <div   >
@@ -50,9 +50,16 @@ const VolunteerDtls = () => {
 
                         <h1> Email Address : <span className="text-teal-300" >{user_email}</span>     </h1>
                     </div>
-                    <div>
+                     <div>
+                       {
+                        volunteers===0 ? <div>
+                           <button  className="btn  disabled bg-gradient-to-r text-xl text-black  from-indigo-500 via-purple-500 to-pink-500 ..."  > Be a Volunteer </button> 
+                   </div> :  <div>
                          <Link to={`/be/${_id}`}  >  <button className="btn bg-gradient-to-r text-xl text-black  from-indigo-500 via-purple-500 to-pink-500 ..."  > Be a Volunteer </button> </Link>
-                    </div>
+                    </div>   
+                       }
+                      
+                     </div>
                                </div> 
                               </div>
 
