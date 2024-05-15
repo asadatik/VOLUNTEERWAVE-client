@@ -7,6 +7,7 @@ import { TfiLayoutGrid3Alt } from "react-icons/tfi";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import { Helmet } from "react-helmet-async";
+import NeedVolunteerTable from "./NeedVolunteerTable";
 const NeedVolunteer = () => {
         const NeedVolunteer = useLoaderData();
         console.log(NeedVolunteer);
@@ -41,7 +42,7 @@ const NeedVolunteer = () => {
         </TabPanel>
 
         <TabPanel>
-        
+                   <div> <NeedVolunteerTable need={NeedVolunteer}  ></NeedVolunteerTable>   </div>
         </TabPanel>
 
         
@@ -49,7 +50,7 @@ const NeedVolunteer = () => {
     </Tabs>    
 
 
-               
+              
        </div>
     );
 };
